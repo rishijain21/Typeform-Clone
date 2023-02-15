@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+  />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.extensions.min.js"></script>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.css">
+    <link rel="stylesheet" href="style.css">
+  
+  
+    <title>Typeform</title>
+
+</head>
+<body>
+
+
+
+
+
+
+
+  <!-- method="post" -->
+
+    <div id="fullpage" class="container">
+        <form action="" name="google-sheet" >
+          <div class="container-header">
+            <div class="container-main">
+      
+
+      
+
+              <!-- Question 1 -->
+              <div class="section">
+               
+                  
+
+                  <div class="split left">
+                    <div class="centered">
+                      <img src="./image1.png" alt="Avatar woman">
+                      
+                    </div>
+                  </div>
+                  
+                  <div class="split right">
+                    <div class="centered">
+                
+                      <div class="label">You’re one step closer for Integrating exceptional skill training solutions at your Institutions to Train & Analyse students skills. </div>
+                      <button class="button" id="next">Continue</button>
+                   
+                    </div>
+                  </div>
+
+                 
+               
+              </div>
+
+
+
+
+       <!-- Question 1 -->
+       <div class="section">
+        <div class="input-block">
+          <div class="label">1. Your name?</div>
+          <div class="input-control">
+            <input name="Name" type="text" min="2" max="100" placeholder="Type your answer here" class="required" autocomplete="off" />
+          </div>
+          <button class="button" id="next">Continue</button>
+        </div>
+      </div>
+
+              <!-- Question 2 -->
+              <div class="section">
+                <div class="input-block">
+                  <div name="Email" class="label">2. Your Email Id?</div>
+                  <div class="input-control">
+                    <input type="email" min="8" max="112" placeholder="Enter you email" class="required" autocomplete="off" />
+                  </div>
+                  <button class="button" id="next">Continue</button>
+                </div>
+              </div>
+      
+              <!-- Question 3 -->
+              <div class="section">
+                <div class="input-block">
+                  <div class="label">3. Your Designation?</div>
+                  <div class="input-control">
+                    <input name="OptA/OptB" data-once id="toggle-on-q2" class="toggle"  value="A" type="radio" />
+                    <label for="toggle-on-q2" class="btn"><span>A</span> Option A</label>
+                    <input name="OptA/OptB" id="toggle-off-q2" class="toggle"  data-once value="B" type="radio" />
+                    <label for="toggle-off-q2" class="btn"><span>B</span> Option B</label>
+                  </div>
+                  <button class="button" id="next">Continue</button>
+                </div>
+              </div>
+      
+              <!-- Question 4 -->
+              <div class="section">
+                <div class="input-block">
+                  <div class="label">
+                    4. Your Contact Number?
+                  </div>
+                  <div class="input-control">
+                    
+                    <input name="Phone" id="phone" type="tel" name="phone"  class="required" placeholder="(201) 2522555225" autocomplete="off" />
+                  </div>
+                  <button class="button" id="next">Continue</button>
+                </div>
+              </div>
+       <!-- Question 5 -->
+       <div class="section">
+        <div class="input-block">
+          <div class="label">
+            Select a date that best suits you and we'll be in touch to schedule a demo
+          </div>
+          <div class="input-control">
+            
+            <input name="Date" type="date" name="date"  class="required" placeholder="(201) 2522555225" autocomplete="off" />
+          </div>
+
+          <div class="input-control" style="align-self: center;"> 
+            <input type="submit"
+            <span  id="submit" value="Submit" class="submit"></span>
+          </div> 
+        </div>
+
+      
+
+      </div>
+    
+            </div>
+
+
+          </div>
+
+         
+
+        </form>
+      </div>
+      
+      <!-- control Buttons -->
+      
+      <div id="controlButtons" class="hidden">
+      
+        <a id="previous">
+          <button>
+            <p><i class="arrow up"></i></p>
+            <!-- Previous -->
+          </button>
+        </a>
+      
+        <!-- Next -->
+      
+        <a id="next">
+          <button>
+            <p><i class="arrow down"></i></p>
+          </button>
+        </a>
+      </div>
+
+    
+    
+</body>
+<script>
+  const phoneInputField = document.querySelector("#phone");
+  const phoneInput = window.intlTelInput(phoneInputField, {
+    utilsScript:
+      "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+  }); 
+
+/*
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyc1rFojyV33GaXdSRR-wiCqNHfBvRXpxBPidH-vZUOE4LRH1Fzc4cCvXVsDvjWvD80/exec'
+const form = document.forms['google-sheet']
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  fetch(scriptURL, { method: "POST", body: new FormData(form) })
+    .then((response) => (window.location.href = "thanks.html"))
+    .catch((error) => console.error("Error!", error.message));
+});
+*/
+</script>
+
+<script src="index.js"></script>
+
+<!-- 
+<script src="index.js"></script> -->
+
+</html>
